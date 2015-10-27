@@ -1,0 +1,33 @@
+body {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+
+  header {
+    max-width: 60em;
+    margin: 0 auto;
+
+    h1 {
+      font-weight: 300;
+    }
+
+    nav.header-tabs {
+      float: right;
+
+      a[href] {
+      text-decoration: none;
+      color: inherit;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  main.container {
+    max-width: 60em;
+    margin: 0 auto;
+  }
+}

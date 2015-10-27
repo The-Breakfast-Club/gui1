@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
         <!-- endbower -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'|link…rel='stylesheet' type='text/css'|link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/main.css">
         <script src="../bower_components/modernizr/src/Modernizr.js"></script>
     </head>
     <body>
@@ -21,7 +23,18 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <header>
+          <nav class="header-tabs">
+            <a href="#/activity">activity</a>
+            <a href="#/login">login</a>
+          </nav>
+          <h1>bitter-fit</h1>
+        </header>
+        <!-- MAIN CONTENT AND INJECTED VIEWS -->
+        <main class="container" ng-app="bitter-fit">
+          <ng-view><i class="fa fa-cog fa-spin fa-3x fa-fw"></i></ng-view>
+
+        </main>
 
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>

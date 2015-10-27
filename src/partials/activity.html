@@ -3,8 +3,26 @@
   <a href="#/add-activity"><i class="fa fa-plus fa-fw fa-lg"></i></a>
 </nav>
 <form>
-  <fieldset>
+  <fieldset class="activity-title">
     <label for="activity-title">activity:</label>
     <input type="text" id="activity-title">
   </fieldset>
+  <fieldset class="activity-amount">
+    <label for="activity-amount">amount:</label>
+    <input type="number" id="activity-amount">
+    <label for="activity-units">select unit:</label>
+    <select name="activity-units">
+      <option value="miles">miles</option>
+      <option value="minutes">minutes</option>
+      <option value="reps">reps</option>
+      <option value="hours">hours</option>
+    </select>
+  </fieldset>
+  <fieldset class="activity-date">
+    <label for="activity-date">date of activity:</label>
+    <input type="date" id="activity-date">
+  </fieldset>
+  <footer>
+    <button type="submit">add activity</button>
+  </footer>
 </form>

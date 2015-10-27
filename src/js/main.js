@@ -4,7 +4,7 @@
       .when('/', {
         templateUrl: 'login.html'
       })
-      .when('/login.html', {
+      .when('/login', {
         templateUrl: 'login.html'
       })
       .when('/signup', {

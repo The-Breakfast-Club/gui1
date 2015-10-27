@@ -23,5 +23,5 @@
         templateUrl: 'chart.html' // TODO: activity title links to chart.html
       });
   })
-  ; // END MODULE
+  ; // END angular.module
 })(); // END IIFE

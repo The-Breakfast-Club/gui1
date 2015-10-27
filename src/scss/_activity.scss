@@ -22,8 +22,8 @@
 } // END activity-tabs
 
 section.user-activity {
-  margin: 5% 10%;
-  border: 1px solid gray;
+  margin: 5%;
+  border: 1px solid lightgray;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 20px;
@@ -32,5 +32,31 @@ section.user-activity {
     padding-left: 10px;
     padding-right: 10px;
     margin-right: 10px;
+  }
+} // END user-activity panel
+
+form.add-activity {
+  margin: 5%;
+  border: 1px solid lightgray;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+
+  label {
+    display: block;
+  }
+  input, select {
+    margin-bottom: 15px;
+    height: 30px;
+    width: 95%;
+  }
+  footer > button > a {
+    text-decoration: none;
+    color: #FFF;
+  }
+  footer > button {
+    background-color: #551A8B;
+    border: solid #551A8B;
+    border-radius: 3px;
   }
 }

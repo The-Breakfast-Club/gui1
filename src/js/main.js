@@ -2,25 +2,25 @@
   angular.module('bitter-fit', ['ngRoute'], function($routeProvider){
     $routeProvider
       .when('/', {
-        templateUrl: 'login.html'
+        templateUrl: 'partials/login.html'
       })
       .when('/login', {
-        templateUrl: 'login.html'
+        templateUrl: 'partials/login.html'
       })
       .when('/signup', {
-        templateUrl: 'signup.html'
+        templateUrl: 'partials/signup.html'
       })
       .when('/activity', {
-        templateUrl: 'activity.html'
+        templateUrl: 'partials/activity.html'
       })
       .when('/add-activity', {
-        templateUrl: 'add-activity.html'
+        templateUrl: 'partials/add-activity.html'
       })
       .when('/edit-activity', {
-        templateUrl: 'edit-activity.html'
+        templateUrl: 'partials/edit-activity.html'
       })
       .when('/chart', {
-        templateUrl: 'chart.html' // TODO: activity title links to chart.html
+        templateUrl: 'partials/chart.html' // TODO: activity title links to chart.html
       });
   })
   ; // END angular.module

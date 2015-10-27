@@ -1,62 +1,72 @@
-.activity-tabs {
-  border-bottom: 1px solid lightgray;
-  padding: 0.5em 2em;
+section.activities {
+  .activity-tabs {
+    border-bottom: 1px solid lightgray;
+    padding: 0.5em 2em;
 
-  a[href] {
-    padding: 1ex 3em;
-    position: relative;
-    bottom: -2px;
-    padding-top: 15px;
+    a[href] {
+      padding: 1ex 3em;
+      position: relative;
+      bottom: -2px;
+      padding-top: 15px;
 
-    .fa-fw {
-      text-decoration: none;
-      color: gray;
+      .fa-fw {
+        text-decoration: none;
+        color: gray;
+      }
+
+      &.active {
+        border: 1px solid lightgray;
+        border-bottom-color: white;
+        border-top: 2px solid gray;
+      }
     }
+  } // END activity-tabs
 
-    &.active {
-      border: 1px solid lightgray;
-      border-bottom-color: white;
-      border-top: 2px solid gray;
-    }
-  }
-} // END activity-tabs
-
-section.user-activity {
-  margin: 5%;
-  border: 1px solid lightgray;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 20px;
-
-  footer > button {
+  section.user-activity {
+    margin: 5%;
+    border: 1px solid lightgray;
     padding-left: 10px;
     padding-right: 10px;
-    margin-right: 10px;
-  }
-} // END user-activity panel
+    padding-bottom: 20px;
 
-form.add-activity {
-  margin: 5%;
-  border: 1px solid lightgray;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 20px;
+    footer > button {
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-right: 10px;
+    }
+  } // END user-activity panel
 
-  label {
-    display: block;
-  }
-  input, select {
-    margin-bottom: 15px;
-    height: 30px;
-    width: 95%;
-  }
-  footer > button > a {
-    text-decoration: none;
-    color: #FFF;
-  }
-  footer > button {
-    background-color: #551A8B;
-    border: solid #551A8B;
-    border-radius: 3px;
-  }
+  form.add-activity {
+    margin: 5%;
+    border: 1px solid lightgray;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+
+    label {
+      display: block;
+    }
+    input, select {
+      margin-bottom: 15px;
+      height: 30px;
+      width: 95%;
+    }
+    footer > button > a {
+      text-decoration: none;
+      color: #FFF;
+    }
+    footer > button {
+      background-color: #551A8B;
+      border: solid #551A8B;
+      border-radius: 3px;
+    }
+  } // END add-activity panel
+
+  .panel {
+    display: none;
+
+    &.active {
+      display: inherit;
+    }
+  } // END panels
 }

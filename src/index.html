@@ -21,7 +21,17 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <header>
+          <h1>bitter-fit</h1>
+          <nav class="header-tabs">
+            <a href="#/activity">activity</a>
+            <a href="#/login">login</a>
+          </nav>
+        </header>
+        <!-- MAIN CONTENT AND INJECTED VIEWS -->
+        <main class="container" ng-app="bitter-fit">
+          <ng-view><i class="fa fa-cog fa-spin fa-2x fa-fw"></i></ng-view>
+        </main>
 
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>

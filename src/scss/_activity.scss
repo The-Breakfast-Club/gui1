@@ -1,6 +1,22 @@
 .activity-tabs {
-  a {
-    text-decoration: none;
-    
+  border-bottom: 1px solid lightgray;
+  padding: 0.5em 2em;
+
+  a[href] {
+    padding: 1ex 3em;
+    position: relative;
+    bottom: -2px;
+    padding-top: 15px;
+
+    .fa-fw {
+      text-decoration: none;
+      color: gray;
+    }
+
+    &.active {
+      border: 1px solid lightgray;
+      border-bottom-color: white;
+      border-top: 2px solid gray;
+    }
   }
 }

@@ -23,6 +23,9 @@
         templateUrl: 'partials/chart.html' // TODO: activity title links to chart.html
       });
   })
+
+  
+
   // angular for login form
   // .run(function($http, $rootScope){
   //   $http.get('filepath')

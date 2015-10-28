@@ -1,0 +1,494 @@
+{
+    "basePath": "https://mysterious-hollows-8407.herokuapp.com",
+    "models": {
+        "ActivityDetailSerializer": {
+            "required": [
+                "url",
+                "id",
+                "title",
+                "units",
+                "date",
+                "stats"
+            ],
+            "id": "ActivityDetailSerializer",
+            "properties": {
+                "url": {
+                    "required": false,
+                    "description": null,
+                    "type": "string",
+                    "readOnly": true
+                },
+                "id": {
+                    "format": "int64",
+                    "required": false,
+                    "description": null,
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "title": {
+                    "required": true,
+                    "description": null,
+                    "type": "string",
+                    "readOnly": false
+                },
+                "units": {
+                    "required": true,
+                    "description": null,
+                    "type": "string",
+                    "readOnly": false
+                },
+                "date": {
+                    "format": "date-time",
+                    "required": false,
+                    "description": null,
+                    "type": "string",
+                    "readOnly": true
+                },
+                "stats": {
+                    "items": {
+                        "$ref": "StatsSerializer"
+                    },
+                    "required": false,
+                    "description": null,
+                    "type": "array",
+                    "readOnly": true
+                }
+            }
+        },
+        "WriteActivitySerializer": {
+            "required": [
+                "title",
+                "units"
+            ],
+            "id": "WriteActivitySerializer",
+            "properties": {
+                "title": {
+                    "required": true,
+                    "description": null,
+                    "type": "string",
+                    "readOnly": false
+                },
+                "units": {
+                    "required": true,
+                    "description": null,
+                    "type": "string",
+                    "readOnly": false
+                }
+            }
+        },
+        "StatsSerializer": {
+            "required": [
+                "id",
+                "activity_id",
+                "number_of",
+                "date"
+            ],
+            "id": "StatsSerializer",
+            "properties": {
+                "id": {
+                    "format": "int64",
+                    "required": false,
+                    "description": null,
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "activity_id": {
+                    "required": false,
+                    "description": null,
+                    "type": "string",
+                    "readOnly": true
+                },
+                "number_of": {
+                    "format": "int64",
+                    "required": true,
+                    "description": null,
+                    "maximum": 32767,
+                    "minimum": 0,
+                    "type": "integer",
+                    "readOnly": false
+                },
+                "date": {
+                    "format": "date-time",
+                    "required": false,
+                    "description": null,
+                    "type": "string",
+                    "readOnly": true
+                }
+            }
+        },
+        "WriteStatsSerializer": {
+            "required": [
+                "number_of"
+            ],
+            "id": "WriteStatsSerializer",
+            "properties": {
+                "number_of": {
+                    "format": "int64",
+                    "required": true,
+                    "description": null,
+                    "maximum": 32767,
+                    "minimum": 0,
+                    "type": "integer",
+                    "readOnly": false
+                }
+            }
+        },
+        "WriteActivityDetailSerializer": {
+            "required": [
+                "title",
+                "units"
+            ],
+            "id": "WriteActivityDetailSerializer",
+            "properties": {
+                "title": {
+                    "required": true,
+                    "description": null,
+                    "type": "string",
+                    "readOnly": false
+                },
+                "units": {
+                    "required": true,
+                    "description": null,
+                    "type": "string",
+                    "readOnly": false
+                }
+            }
+        },
+        "ActivitySerializer": {
+            "required": [
+                "url",
+                "id",
+                "title",
+                "units",
+                "date"
+            ],
+            "id": "ActivitySerializer",
+            "properties": {
+                "url": {
+                    "required": false,
+                    "description": null,
+                    "type": "string",
+                    "readOnly": true
+                },
+                "id": {
+                    "format": "int64",
+                    "required": false,
+                    "description": null,
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "title": {
+                    "required": true,
+                    "description": null,
+                    "type": "string",
+                    "readOnly": false
+                },
+                "units": {
+                    "required": true,
+                    "description": null,
+                    "type": "string",
+                    "readOnly": false
+                },
+                "date": {
+                    "format": "date-time",
+                    "required": false,
+                    "description": null,
+                    "type": "string",
+                    "readOnly": true
+                }
+            }
+        }
+    },
+    "apiVersion": "",
+    "apis": [
+        {
+            "description": "API endpoint that allows activities to be viewed or edited",
+            "operations": [
+                {
+                    "method": "GET",
+                    "notes": "API endpoint that allows activities to be viewed or edited",
+                    "type": "ActivitySerializer",
+                    "nickname": "Activity_list",
+                    "summary": "API endpoint that allows activities to be viewed or edited",
+                    "parameters": []
+                },
+                {
+                    "method": "POST",
+                    "notes": "API endpoint that allows activities to be viewed or edited",
+                    "type": "ActivityDetailSerializer",
+                    "nickname": "Activity_create",
+                    "summary": "API endpoint that allows activities to be viewed or edited",
+                    "parameters": [
+                        {
+                            "description": "",
+                            "name": "title",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "description": "",
+                            "name": "units",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        }
+                    ]
+                }
+            ],
+            "path": "/api/activities/"
+        },
+        {
+            "description": "API endpoint that allows activities to be viewed or edited",
+            "operations": [
+                {
+                    "method": "PUT",
+                    "notes": "API endpoint that allows activities to be viewed or edited",
+                    "type": "ActivityDetailSerializer",
+                    "nickname": "Activity_update",
+                    "summary": "API endpoint that allows activities to be viewed or edited",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "pk",
+                            "paramType": "path"
+                        },
+                        {
+                            "description": "",
+                            "name": "title",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "description": "",
+                            "name": "units",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        }
+                    ]
+                },
+                {
+                    "method": "GET",
+                    "notes": "API endpoint that allows activities to be viewed or edited",
+                    "type": "ActivityDetailSerializer",
+                    "nickname": "Activity_retrieve",
+                    "summary": "API endpoint that allows activities to be viewed or edited",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "pk",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "notes": "API endpoint that allows activities to be viewed or edited",
+                    "type": "ActivityDetailSerializer",
+                    "nickname": "Activity_destroy",
+                    "summary": "API endpoint that allows activities to be viewed or edited",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "pk",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "PATCH",
+                    "notes": "API endpoint that allows activities to be viewed or edited",
+                    "type": "ActivityDetailSerializer",
+                    "nickname": "Activity_partial_update",
+                    "summary": "API endpoint that allows activities to be viewed or edited",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "pk",
+                            "paramType": "path"
+                        },
+                        {
+                            "description": "",
+                            "name": "title",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "description": "",
+                            "name": "units",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form"
+                        }
+                    ]
+                }
+            ],
+            "path": "/api/activities/{pk}/"
+        },
+        {
+            "description": "API endpoint that allows stats to be viewed or edited",
+            "operations": [
+                {
+                    "method": "GET",
+                    "notes": "API endpoint that allows stats to be viewed or edited",
+                    "type": "StatsSerializer",
+                    "nickname": "Stats_list",
+                    "summary": "API endpoint that allows stats to be viewed or edited",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "activity_pk",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "notes": "API endpoint that allows stats to be viewed or edited",
+                    "type": "StatsSerializer",
+                    "nickname": "Stats_create",
+                    "summary": "API endpoint that allows stats to be viewed or edited",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "activity_pk",
+                            "paramType": "path"
+                        },
+                        {
+                            "maximum": 32767,
+                            "format": "int64",
+                            "description": "",
+                            "minimum": 0,
+                            "name": "number_of",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "form"
+                        }
+                    ]
+                }
+            ],
+            "path": "/api/activities/{activity_pk}/stats/"
+        },
+        {
+            "description": "API endpoint that allows stats to be viewed or edited",
+            "operations": [
+                {
+                    "method": "PUT",
+                    "notes": "API endpoint that allows stats to be viewed or edited",
+                    "type": "StatsSerializer",
+                    "nickname": "Stats_update",
+                    "summary": "API endpoint that allows stats to be viewed or edited",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "activity_pk",
+                            "paramType": "path"
+                        },
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "pk",
+                            "paramType": "path"
+                        },
+                        {
+                            "maximum": 32767,
+                            "format": "int64",
+                            "description": "",
+                            "minimum": 0,
+                            "name": "number_of",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "form"
+                        }
+                    ]
+                },
+                {
+                    "method": "GET",
+                    "notes": "API endpoint that allows stats to be viewed or edited",
+                    "type": "StatsSerializer",
+                    "nickname": "Stats_retrieve",
+                    "summary": "API endpoint that allows stats to be viewed or edited",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "activity_pk",
+                            "paramType": "path"
+                        },
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "pk",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "notes": "API endpoint that allows stats to be viewed or edited",
+                    "type": "StatsSerializer",
+                    "nickname": "Stats_destroy",
+                    "summary": "API endpoint that allows stats to be viewed or edited",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "activity_pk",
+                            "paramType": "path"
+                        },
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "pk",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "PATCH",
+                    "notes": "API endpoint that allows stats to be viewed or edited",
+                    "type": "StatsSerializer",
+                    "nickname": "Stats_partial_update",
+                    "summary": "API endpoint that allows stats to be viewed or edited",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "activity_pk",
+                            "paramType": "path"
+                        },
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "pk",
+                            "paramType": "path"
+                        },
+                        {
+                            "maximum": 32767,
+                            "format": "int64",
+                            "description": "",
+                            "minimum": 0,
+                            "name": "number_of",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "form"
+                        }
+                    ]
+                }
+            ],
+            "path": "/api/activities/{activity_pk}/stats/{pk}/"
+        }
+    ],
+    "resourcePath": "/api/activities",
+    "swaggerVersion": "1.2"
+}

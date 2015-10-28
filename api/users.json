@@ -1,0 +1,202 @@
+{
+    "basePath": "https://mysterious-hollows-8407.herokuapp.com",
+    "models": {
+        "UserSerializer": {
+            "required": [
+                "url",
+                "username",
+                "id",
+                "date_joined"
+            ],
+            "id": "UserSerializer",
+            "properties": {
+                "url": {
+                    "required": false,
+                    "description": null,
+                    "type": "string",
+                    "readOnly": true
+                },
+                "username": {
+                    "required": true,
+                    "description": "Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.",
+                    "type": "string",
+                    "readOnly": false
+                },
+                "id": {
+                    "format": "int64",
+                    "required": false,
+                    "description": null,
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "date_joined": {
+                    "format": "date-time",
+                    "required": false,
+                    "description": null,
+                    "type": "string",
+                    "readOnly": false
+                }
+            }
+        },
+        "WriteUserSerializer": {
+            "required": [
+                "username"
+            ],
+            "id": "WriteUserSerializer",
+            "properties": {
+                "username": {
+                    "required": true,
+                    "description": "Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.",
+                    "type": "string",
+                    "readOnly": false
+                },
+                "date_joined": {
+                    "format": "date-time",
+                    "required": false,
+                    "description": null,
+                    "type": "string",
+                    "readOnly": false
+                }
+            }
+        }
+    },
+    "apiVersion": "",
+    "apis": [
+        {
+            "description": "API endpoint that allows users to be viewed or edited",
+            "operations": [
+                {
+                    "method": "GET",
+                    "notes": "API endpoint that allows users to be viewed or edited",
+                    "type": "UserSerializer",
+                    "nickname": "User_list",
+                    "summary": "API endpoint that allows users to be viewed or edited",
+                    "parameters": []
+                },
+                {
+                    "method": "POST",
+                    "notes": "API endpoint that allows users to be viewed or edited",
+                    "type": "UserSerializer",
+                    "nickname": "User_create",
+                    "summary": "API endpoint that allows users to be viewed or edited",
+                    "parameters": [
+                        {
+                            "description": "Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.",
+                            "name": "username",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "format": "date-time",
+                            "description": "",
+                            "name": "date_joined",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form"
+                        }
+                    ]
+                }
+            ],
+            "path": "/api/users/"
+        },
+        {
+            "description": "API endpoint that allows users to be viewed or edited",
+            "operations": [
+                {
+                    "method": "PUT",
+                    "notes": "API endpoint that allows users to be viewed or edited",
+                    "type": "UserSerializer",
+                    "nickname": "User_update",
+                    "summary": "API endpoint that allows users to be viewed or edited",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "pk",
+                            "paramType": "path"
+                        },
+                        {
+                            "description": "Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.",
+                            "name": "username",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "format": "date-time",
+                            "description": "",
+                            "name": "date_joined",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form"
+                        }
+                    ]
+                },
+                {
+                    "method": "GET",
+                    "notes": "API endpoint that allows users to be viewed or edited",
+                    "type": "UserSerializer",
+                    "nickname": "User_retrieve",
+                    "summary": "API endpoint that allows users to be viewed or edited",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "pk",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "notes": "API endpoint that allows users to be viewed or edited",
+                    "type": "UserSerializer",
+                    "nickname": "User_destroy",
+                    "summary": "API endpoint that allows users to be viewed or edited",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "pk",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "PATCH",
+                    "notes": "API endpoint that allows users to be viewed or edited",
+                    "type": "UserSerializer",
+                    "nickname": "User_partial_update",
+                    "summary": "API endpoint that allows users to be viewed or edited",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "type": "string",
+                            "name": "pk",
+                            "paramType": "path"
+                        },
+                        {
+                            "description": "Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.",
+                            "name": "username",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "format": "date-time",
+                            "description": "",
+                            "name": "date_joined",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form"
+                        }
+                    ]
+                }
+            ],
+            "path": "/api/users/{pk}/"
+        }
+    ],
+    "resourcePath": "/api/users",
+    "swaggerVersion": "1.2"
+}

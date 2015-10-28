@@ -32,47 +32,12 @@
       });
   }) // END activity placeholders
 
-  // angular for login form
-  // .run(function($http, $rootScope){
-  //   $http.get('filepath')
-  //   )}
-  // .controller('loginController', function($scope, $http){
-  //   $scope.loginvalues= {
-  //     name: "",
-  //     password: ""
-  //   };
-  //
-  //   $scope.submit= function(){
-  //     $http.post("filepath", $scope.loginvalues)
-  //     .then(function (){
-  //
-  //     });
-  //   };
-  // })
-
-  // angular for signup form
-  // .run(function($http, $rootScope){
-  //   $http.get('filepath')
-  // )}
-  // .controller('signupController', function($scope, $http){
-  //   $scope.signinvalues= {
-  //     name: "",
-  //     email: "",
-  //     password: "",
-  //     confirmpassword: ""
-  //   };
-  //
-  //   $scope.submit= function(){
-  //     $http.post("filepath", $scope.signinvalues)
-  //     .then(function (){
-  //
-  //     });
-  //   };
-  // })
-
   ; // END angular.module
 })(); // END IIFE
 
+
+
+// ACTIVITY/ADD-ACTIVITY TABS
 $('.activity-tabs > a').on('click', function(){
   var panelId = $(this).attr('href');
 
@@ -85,9 +50,6 @@ $('.activity-tabs > a').on('click', function(){
     .trigger('click');
 
 // jquery for tabs
-
-// jquery for tabs
-
 $('#login').click(function() {
   $('#login').addClass('active');
   $('#signup').removeClass('active');

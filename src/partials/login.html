@@ -1,17 +1,17 @@
 <!-- similar tab setup from weekend project with team BlaCaJoJo - shout out to camile's styling code for reference -->
 <div class="main-content-tabs">
   <nav class="tabs">
-    <a href="#panel-login" class="active">Log in</a>
-    <a href="#panel-signup" class="">Sign up</a>
+    <a href="#panel-login" id="login" class="active">Log in</a>
+    <a href="#panel-signup" id="signup" class="">Sign up</a>
   </nav>
 
   <div class="tab-content">
     <section id="pannel-login" class="pannel">
       <section class="form-container">
-        <form class="form-login">
+        <form class="form-login" ng-submit="submit()" name="login">
           <fieldset>
-            <label>Username<input type="text" name="username" placeholder="username"/></label>
-            <label>Password<input type="text" name="password" placeholder="********"/></label>
+            <label>Username<input type="text" name="username" placeholder="username" ng-model="loginvalues.name"/></label>
+            <label>Password<input type="text" name="password" placeholder="********" ng-model="loginvalues.password"/></label>
           </fieldset>
             <button type="submit" class="button-login">Login</button>
         </form>
@@ -20,12 +20,12 @@
 
     <section id="panel-signup" class="panel">
       <section class="form-container">
-        <form class="form-signup">
+        <form class="form-signup" ng-submit="submit()" name="signup">
           <fieldset>
-            <label>Username<input type="text" name="name" placeholder="J. Doe"/></label>
-            <label>Email<input type="text" name="email" placeholder="you@example.com"/></label>
-            <label>Password<input type="text" name="password" placeholder="********"/></label>
-            <label>Confirm Password<input type="text" name="confirm" placeholder="********"/></label>
+            <label>Username<input type="text" name="name" placeholder="J. Doe" ng-model="signinvalues.name"/></label>
+            <label>Email<input type="text" name="email" placeholder="you@example.com" ng-model="signinvalues.email"/></label>
+            <label>Password<input type="text" name="password" placeholder="********" ng-model="signinvalues.password"/></label>
+            <label>Confirm Password<input type="text" name="confirm" placeholder="********" ng-model="signinvalues.confirmpassword"/></label>
           </fieldset>
             <button type="submit" class="button-signup">Signup</button>
         </form>

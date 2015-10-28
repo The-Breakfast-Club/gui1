@@ -76,6 +76,9 @@ $('.activity-tabs > a').on('click', function(){
     .trigger('click');
 
 // jquery for tabs
+
+// jquery for tabs
+
 $('#login').click(function() {
   $('#login').addClass('active');
   $('#signup').removeClass('active');

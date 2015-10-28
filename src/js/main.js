@@ -23,50 +23,33 @@
         templateUrl: 'partials/chart.html' // TODO: activity title links to chart.html
       });
   })
-  // angular for login form
-  // .run(function($http, $rootScope){
-  //   $http.get('filepath')
-  //   )}
-  // .controller('loginController', function($scope, $http){
-  //   $scope.loginvalues= {
-  //     name: "",
-  //     password: ""
-  //   };
-  //
-  //   $scope.submit= function(){
-  //     $http.post("filepath", $scope.loginvalues)
-  //     .then(function (){
-  //
-  //     });
-  //   };
-  // })
 
-  // angular for signup form
-  // .run(function($http, $rootScope){
-  //   $http.get('filepath')
-  // )}
-  // .controller('signupController', function($scope, $http){
-  //   $scope.signinvalues= {
-  //     name: "",
-  //     email: "",
-  //     password: "",
-  //     confirmpassword: ""
-  //   };
-  //
-  //   $scope.submit= function(){
-  //     $http.post("filepath", $scope.signinvalues)
-  //     .then(function (){
-  //
-  //     });
-  //   };
-  // })
+  .run(function($http, $rootScope){ // inputs data for activity placeholders
+    $http.get('https://mysterious-hollows-8407.herokuapp.com:443/api/activities/')
+    // $http.get('/api/activities.json')
+      .then(function(response){
+        $rootScope.activities = response.data;
+      });
+  }) // END activity placeholders
 
   ; // END angular.module
 })(); // END IIFE
 
 
-// jquery for tabs
 
+// ACTIVITY/ADD-ACTIVITY TABS
+$('.activity-tabs > a').on('click', function(){
+  var panelId = $(this).attr('href');
+
+  $(this).add(panelId)
+    .addClass('active')
+  .siblings()
+    .removeClass('active');
+
+  }).filter('[href="#activity"]')
+    .trigger('click');
+
+// jquery for tabs
 $('#login').click(function() {
   $('#login').addClass('active');
   $('#signup').removeClass('active');

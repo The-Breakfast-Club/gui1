@@ -1,10 +1,34 @@
-<nav class="activity-tabs">
-  <a href="#/activity"><i class="fa fa-heartbeat fa-fw fa-lg"></i></a>
-  <a href="#/add-activity"><i class="fa fa-plus fa-fw fa-lg"></i></a>
-</nav>
-<form>
-  <fieldset>
-    <label for="activity-title">activity:</label>
-    <input type="text" id="activity-title">
-  </fieldset>
-</form>
+<section class="activities">
+  <nav class="activity-tabs">
+    <a href="#/activity" class="user-activity-tab"><i class="fa fa-heartbeat fa-fw fa-2x"></i></a>
+    <a href="#/add-activity" class="add-activity-tab active"><i class="fa fa-plus fa-fw fa-2x"></i></a>
+  </nav>
+  <section class="user-activity panel">
+    <h2>title</h2>
+    <p class="activity-data">number_of units on date</p>
+    <footer>
+      <button class="add-to">+</button>
+      <button class="edit-activity">edit</button>
+    </footer>
+  </section>
+  <form class="add-activity panel active">
+    <h2>add new activity</h2>
+    <fieldset class="activity-title">
+      <label for="activity-title">activity:</label>
+      <input type="text" id="activity-title" placeholder="name of activity">
+    </fieldset>
+    <fieldset class="activity-amount">
+      <label for="activity-amount">amount:</label>
+      <input type="number" id="activity-amount" placeholder="enter number of laps swam, miles run, etc.">
+      <label for="activity-units">unit:</label>
+      <input type="text" id="activity-units" placeholder="miles, minutes, reps, etc.">
+    </fieldset>
+    <fieldset class="activity-date">
+      <label for="activity-date">date of activity:</label>
+      <input type="date" id="activity-date">
+    </fieldset>
+    <footer>
+      <button type="submit"><a href="#/activity">add activity</button>
+    </footer>
+  </form>
+</section>

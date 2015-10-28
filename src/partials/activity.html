@@ -1,28 +1,40 @@
-<nav class="activity-tabs">
-  <a href="#/activity"><i class="fa fa-heartbeat fa-fw fa-lg"></i></a>
-  <a href="#/add-activity"><i class="fa fa-plus fa-fw fa-lg"></i></a>
-</nav>
-<form>
-  <fieldset class="activity-title">
-    <label for="activity-title">activity:</label>
-    <input type="text" id="activity-title">
-  </fieldset>
-  <fieldset class="activity-amount">
-    <label for="activity-amount">amount:</label>
-    <input type="number" id="activity-amount">
-    <label for="activity-units">select unit:</label>
-    <select name="activity-units">
-      <option value="miles">miles</option>
-      <option value="minutes">minutes</option>
-      <option value="reps">reps</option>
-      <option value="hours">hours</option>
-    </select>
-  </fieldset>
-  <fieldset class="activity-date">
-    <label for="activity-date">date of activity:</label>
-    <input type="date" id="activity-date">
-  </fieldset>
-  <footer>
-    <button type="submit">add activity</button>
-  </footer>
-</form>
+<section class="activities">
+  <nav class="activity-tabs">
+    <a href="#/activity" class="user-activity-tab active"><i class="fa fa-heartbeat fa-fw fa-2x"></i></a>
+    <a href="#/add-activity" class="add-activity-tab"><i class="fa fa-plus fa-fw fa-2x"></i></a>
+  </nav>
+  <section class="user-activity panel active" ng-repeat="activity in activities">
+    <h2>{{activity.title}}</h2>
+    <p class="activity-data">{{activity.number_of}} {{activity.units}} on {{activity.date}}</p>
+    <footer>
+      <button class="add-to">+</button>
+      <button class="edit-activity">edit</button>
+    </footer>
+  </section>
+  <form class="add-activity panel">
+    <h2>add new activity</h2>
+    <fieldset class="activity-title">
+      <label for="activity-title">activity:</label>
+      <input type="text" id="activity-title" placeholder="name of activity">
+    </fieldset>
+    <fieldset class="activity-amount">
+      <label for="activity-amount">amount:</label>
+      <input type="number" id="activity-amount" placeholder="enter number of laps swam, miles run, ect.">
+      <label for="activity-units">select unit:</label>
+      <select name="activity-units">
+        <option value="miles">miles</option>
+        <option value="minutes">minutes</option>
+        <option value="reps">reps</option>
+        <option value="hours">hours</option>
+        <option value="laps">laps</option>
+      </select>
+    </fieldset>
+    <fieldset class="activity-date">
+      <label for="activity-date">date of activity:</label>
+      <input type="date" id="activity-date">
+    </fieldset>
+    <footer>
+      <button type="submit"><a href="#/activity">add activity</button>
+    </footer>
+  </form>
+</section>

@@ -108,22 +108,12 @@
     font-size: 10pt;
     padding: .75% 1%;
   }
-  &.active {
-    border: 1px solid #ddd;
-    border-bottom: 4px solid #ffffff;
-    border-bottom-color: white;
-    color: #000000;
-    border-top: 2px solid #f69c55;
-  }
 }
+
 .panel {
   display: none;
-    &.active {
-      display: inherit;
-      &::after {
-        display: table;
-        content: "";
-        clear: both;
-      }
-    }
+
+  &.active {
+    display: inherit;
+  }
 }

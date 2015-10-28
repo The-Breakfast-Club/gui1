@@ -23,5 +23,56 @@
         templateUrl: 'partials/chart.html' // TODO: activity title links to chart.html
       });
   })
+  // angular for login form
+  // .run(function($http, $rootScope){
+  //   $http.get('filepath')
+  //   )}
+  // .controller('loginController', function($scope, $http){
+  //   $scope.loginvalues= {
+  //     name: "",
+  //     password: ""
+  //   };
+  //
+  //   $scope.submit= function(){
+  //     $http.post("filepath", $scope.loginvalues)
+  //     .then(function (){
+  //
+  //     });
+  //   };
+  // })
+
+  // angular for signup form
+  // .run(function($http, $rootScope){
+  //   $http.get('filepath')
+  // )}
+  // .controller('signupController', function($scope, $http){
+  //   $scope.signinvalues= {
+  //     name: "",
+  //     email: "",
+  //     password: "",
+  //     confirmpassword: ""
+  //   };
+  //
+  //   $scope.submit= function(){
+  //     $http.post("filepath", $scope.signinvalues)
+  //     .then(function (){
+  //
+  //     });
+  //   };
+  // })
+
   ; // END angular.module
 })(); // END IIFE
+
+
+// jquery for tabs
+
+$('#login').click(function() {
+  $('#login').addClass('active');
+  $('#signup').removeClass('active');
+});
+
+$('#signup').click(function() {
+  $('#signup').addClass('active');
+  $('#login').removeClass('active');
+});

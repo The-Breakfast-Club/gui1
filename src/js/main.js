@@ -24,12 +24,13 @@
       });
   })
 
-  .run(function($http, $rootScope){
-    $http.get('/api/activities.json')
+  .run(function($http, $rootScope){ // inputs data for activity placeholders
+    $http.get('https://mysterious-hollows-8407.herokuapp.com:443/api/activities/')
+    // $http.get('/api/activities.json')
       .then(function(response){
         $rootScope.activities = response.data;
       });
-  })
+  }) // END activity placeholders
 
   // angular for login form
   // .run(function($http, $rootScope){

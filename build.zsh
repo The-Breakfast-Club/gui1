@@ -7,6 +7,9 @@ cp src/index.html dist/
 cp src/login.html dist/
 cp src/activity.html dist/
 cp src/chart.html dist/
+cp src/add-activity.html dist/
+cp src/edit-activity.html dist/
+cp src/signup.html dist/
 mkdir dist/partials/
 cp -r src/partials dist/
 

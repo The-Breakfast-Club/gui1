@@ -24,7 +24,12 @@
       });
   })
 
-  
+  .run(function($http, $rootScope){
+    $http.get('/api/activities.json')
+      .then(function(response){
+        $rootScope.activities = response.data;
+      });
+  })
 
   // angular for login form
   // .run(function($http, $rootScope){

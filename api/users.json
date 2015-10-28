@@ -1,202 +1,95 @@
-{
-    "basePath": "https://mysterious-hollows-8407.herokuapp.com",
-    "models": {
-        "UserSerializer": {
-            "required": [
-                "url",
-                "username",
-                "id",
-                "date_joined"
-            ],
-            "id": "UserSerializer",
-            "properties": {
-                "url": {
-                    "required": false,
-                    "description": null,
-                    "type": "string",
-                    "readOnly": true
-                },
-                "username": {
-                    "required": true,
-                    "description": "Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.",
-                    "type": "string",
-                    "readOnly": false
-                },
-                "id": {
-                    "format": "int64",
-                    "required": false,
-                    "description": null,
-                    "type": "integer",
-                    "readOnly": true
-                },
-                "date_joined": {
-                    "format": "date-time",
-                    "required": false,
-                    "description": null,
-                    "type": "string",
-                    "readOnly": false
-                }
-            }
-        },
-        "WriteUserSerializer": {
-            "required": [
-                "username"
-            ],
-            "id": "WriteUserSerializer",
-            "properties": {
-                "username": {
-                    "required": true,
-                    "description": "Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.",
-                    "type": "string",
-                    "readOnly": false
-                },
-                "date_joined": {
-                    "format": "date-time",
-                    "required": false,
-                    "description": null,
-                    "type": "string",
-                    "readOnly": false
-                }
-            }
-        }
+[
+    {
+        "id": 31
     },
-    "apiVersion": "",
-    "apis": [
-        {
-            "description": "API endpoint that allows users to be viewed or edited",
-            "operations": [
-                {
-                    "method": "GET",
-                    "notes": "API endpoint that allows users to be viewed or edited",
-                    "type": "UserSerializer",
-                    "nickname": "User_list",
-                    "summary": "API endpoint that allows users to be viewed or edited",
-                    "parameters": []
-                },
-                {
-                    "method": "POST",
-                    "notes": "API endpoint that allows users to be viewed or edited",
-                    "type": "UserSerializer",
-                    "nickname": "User_create",
-                    "summary": "API endpoint that allows users to be viewed or edited",
-                    "parameters": [
-                        {
-                            "description": "Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.",
-                            "name": "username",
-                            "required": true,
-                            "type": "string",
-                            "paramType": "form"
-                        },
-                        {
-                            "format": "date-time",
-                            "description": "",
-                            "name": "date_joined",
-                            "required": false,
-                            "type": "string",
-                            "paramType": "form"
-                        }
-                    ]
-                }
-            ],
-            "path": "/api/users/"
-        },
-        {
-            "description": "API endpoint that allows users to be viewed or edited",
-            "operations": [
-                {
-                    "method": "PUT",
-                    "notes": "API endpoint that allows users to be viewed or edited",
-                    "type": "UserSerializer",
-                    "nickname": "User_update",
-                    "summary": "API endpoint that allows users to be viewed or edited",
-                    "parameters": [
-                        {
-                            "required": true,
-                            "type": "string",
-                            "name": "pk",
-                            "paramType": "path"
-                        },
-                        {
-                            "description": "Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.",
-                            "name": "username",
-                            "required": true,
-                            "type": "string",
-                            "paramType": "form"
-                        },
-                        {
-                            "format": "date-time",
-                            "description": "",
-                            "name": "date_joined",
-                            "required": false,
-                            "type": "string",
-                            "paramType": "form"
-                        }
-                    ]
-                },
-                {
-                    "method": "GET",
-                    "notes": "API endpoint that allows users to be viewed or edited",
-                    "type": "UserSerializer",
-                    "nickname": "User_retrieve",
-                    "summary": "API endpoint that allows users to be viewed or edited",
-                    "parameters": [
-                        {
-                            "required": true,
-                            "type": "string",
-                            "name": "pk",
-                            "paramType": "path"
-                        }
-                    ]
-                },
-                {
-                    "method": "DELETE",
-                    "notes": "API endpoint that allows users to be viewed or edited",
-                    "type": "UserSerializer",
-                    "nickname": "User_destroy",
-                    "summary": "API endpoint that allows users to be viewed or edited",
-                    "parameters": [
-                        {
-                            "required": true,
-                            "type": "string",
-                            "name": "pk",
-                            "paramType": "path"
-                        }
-                    ]
-                },
-                {
-                    "method": "PATCH",
-                    "notes": "API endpoint that allows users to be viewed or edited",
-                    "type": "UserSerializer",
-                    "nickname": "User_partial_update",
-                    "summary": "API endpoint that allows users to be viewed or edited",
-                    "parameters": [
-                        {
-                            "required": true,
-                            "type": "string",
-                            "name": "pk",
-                            "paramType": "path"
-                        },
-                        {
-                            "description": "Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.",
-                            "name": "username",
-                            "required": false,
-                            "type": "string",
-                            "paramType": "form"
-                        },
-                        {
-                            "format": "date-time",
-                            "description": "",
-                            "name": "date_joined",
-                            "required": false,
-                            "type": "string",
-                            "paramType": "form"
-                        }
-                    ]
-                }
-            ],
-            "path": "/api/users/{pk}/"
-        }
-    ],
-    "resourcePath": "/api/users",
-    "swaggerVersion": "1.2"
-}
+    {
+        "id": 30
+    },
+    {
+        "id": 29
+    },
+    {
+        "id": 28
+    },
+    {
+        "id": 27
+    },
+    {
+        "id": 26
+    },
+    {
+        "id": 25
+    },
+    {
+        "id": 24
+    },
+    {
+        "id": 23
+    },
+    {
+        "id": 22
+    },
+    {
+        "id": 21
+    },
+    {
+        "id": 20
+    },
+    {
+        "id": 19
+    },
+    {
+        "id": 18
+    },
+    {
+        "id": 17
+    },
+    {
+        "id": 16
+    },
+    {
+        "id": 15
+    },
+    {
+        "id": 14
+    },
+    {
+        "id": 13
+    },
+    {
+        "id": 12
+    },
+    {
+        "id": 11
+    },
+    {
+        "id": 10
+    },
+    {
+        "id": 9
+    },
+    {
+        "id": 8
+    },
+    {
+        "id": 7
+    },
+    {
+        "id": 6
+    },
+    {
+        "id": 5
+    },
+    {
+        "id": 4
+    },
+    {
+        "id": 3
+    },
+    {
+        "id": 2
+    },
+    {
+        "id": 1
+    }
+]

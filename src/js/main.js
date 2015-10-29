@@ -19,8 +19,8 @@
       .when('/edit-activity', {
         templateUrl: 'partials/edit-activity.html'
       })
-      .when('/activity/{{activity.id}}', {
-        templateUrl: 'partials/chart.html' // TODO: activity title links to chart.html
+      .when('/activity/:id', {
+        templateUrl: 'partials/chart.html'
       });
   })
 

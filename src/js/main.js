@@ -19,66 +19,68 @@
       .when('/edit-activity', {
         templateUrl: 'partials/edit-activity.html'
       })
-      .when('/chart', {
-        templateUrl: 'partials/chart.html' // TODO: activity title links to chart.html
+      .when('/activity/:id', {
+        templateUrl: 'partials/chart.html'
       });
   })
-  // angular for login form
-  // .run(function($http, $rootScope){
-  //   $http.get('filepath')
-  //   )}
-  // .controller('loginController', function($scope, $http){
-  //   $scope.loginvalues= {
-  //     name: "",
-  //     password: ""
-  //   };
-  //
-  //   $scope.submit= function(){
-  //     $http.post("filepath", $scope.loginvalues)
-  //     .then(function (){
-  //
-  //     });
-  //   };
-  // })
 
-  // angular for signup form
-  // .run(function($http, $rootScope){
-  //   $http.get('filepath')
-  // )}
-  // .controller('signupController', function($scope, $http){
-  //   $scope.signinvalues= {
-  //     name: "",
-  //     email: "",
-  //     password: "",
-  //     confirmpassword: ""
-  //   };
-  //
-  //   $scope.submit= function(){
-  //     $http.post("filepath", $scope.signinvalues)
-  //     .then(function (){
-  //
-  //     });
-  //   };
-  // })
+  .run(function($http, $rootScope){ // inputs data for activity placeholders
+    $http.get('https://mysterious-hollows-8407.herokuapp.com:443/api/activities/')
+    // $http.get('/api/activities.json')
+      .then(function(response){
+        $rootScope.activities = response.data;
+      });
+  }) // END activity placeholders
+  //START
+  .run(function($http, $rootScope){
+   $http.get('https://mysterious-hollows-8407.herokuapp.com:443/api/users/');
+ })
+ .controller('signupController', function($scope, $http){
+   $scope.signinvalues= {
+    name: "",
+    email: "",
+    password: "",
+    confirmpassword: ""
+   };
+
+   $scope.submit= function(){
+     console.log("please God please work");
+     $http.post('https://mysterious-hollows-8407.herokuapp.com:443/api/users/', $scope.signinvalues)
+     .then(function (){
+
+     });
+   };
+ })
+  //END
+  .controller("NewActivity", function($scope, $http){
+    $scope.act = { };
+
+    $scope.addAct = function() {
+      $http.post('https://mysterious-hollows-8407.herokuapp.com:443/api/activities/', $scope.act)
+      .then(function($form){
+        console.log("submit?");
+      });
+    };
+  })
 
   ; // END angular.module
 })(); // END IIFE
 
-$('.activity-tabs > a').on('click', function(){
-  var panelId = $(this).attr('href');
 
-  $(this).add(panelId)
-    .addClass('active')
-  .siblings()
-    .removeClass('active');
 
-  }).filter('[href="#activity"]')
-    .trigger('click');
+// ACTIVITY/ADD-ACTIVITY TABS
+// $('.activity-tabs > a').on('click', function(){
+//   var panelId = $(this).attr('href');
+//
+//   $(this).add(panelId)
+//     .addClass('active')
+//   .siblings()
+//     .removeClass('active');
+//
+//   }).filter('[href="#activity"]')
+//     .trigger('click');
 
 // jquery for tabs
-
-// jquery for tabs
-
 $('#login').click(function() {
   $('#login').addClass('active');
   $('#signup').removeClass('active');

@@ -32,6 +32,17 @@
       });
   }) // END activity placeholders
 
+  .controller("NewActivity", function($scope, $http){
+    $scope.act = { };
+
+    $scope.addAct = function() {
+      $http.post('https://mysterious-hollows-8407.herokuapp.com:443/api/activities/', $scope.act)
+      .then(function(){
+        console.log("submit?");
+      });
+    };
+  })
+
   ; // END angular.module
 })(); // END IIFE
 

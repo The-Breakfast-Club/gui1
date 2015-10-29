@@ -4,7 +4,7 @@
     <a href="#/add-activity" class="add-activity-tab"><i class="fa fa-plus fa-fw fa-2x"></i></a>
   </nav>
   <section class="user-activity panel active" ng-repeat="activity in activities">
-    <h2><a href="#/chart">{{activity.title}}</a></h2>
+    <h2><a href="#/activity/{{activity.id}}">{{activity.title}}</a></h2>
     <p class="activity-data">{{activity.number_of}} {{activity.units}} on {{activity.date}}</p>
     <footer>
       <button class="add-to">+</button>

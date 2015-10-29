@@ -31,23 +31,43 @@
         $rootScope.activities = response.data;
       });
   }) // END activity placeholders
+  //START
+  .run(function($http, $rootScope){
+   $http.get('https://aqueous-sea-6980.herokuapp.com/api/users/');
+ })
+ .controller('signupController', function($scope, $http){
+   $scope.signinvalues= {
+    name: "",
+    email: "",
+    password: "",
+    confirmpassword: ""
+   };
 
+   $scope.submit= function(){
+     console.log("please God please work");
+     $http.post('https://aqueous-sea-6980.herokuapp.com/api/users/', $scope.signinvalues)
+     .then(function (){
+
+     });
+   };
+ })
+  //END
   ; // END angular.module
 })(); // END IIFE
 
 
 
 // ACTIVITY/ADD-ACTIVITY TABS
-$('.activity-tabs > a').on('click', function(){
-  var panelId = $(this).attr('href');
-
-  $(this).add(panelId)
-    .addClass('active')
-  .siblings()
-    .removeClass('active');
-
-  }).filter('[href="#activity"]')
-    .trigger('click');
+// $('.activity-tabs > a').on('click', function(){
+//   var panelId = $(this).attr('href');
+//
+//   $(this).add(panelId)
+//     .addClass('active')
+//   .siblings()
+//     .removeClass('active');
+//
+//   }).filter('[href="#activity"]')
+//     .trigger('click');
 
 // jquery for tabs
 $('#login').click(function() {

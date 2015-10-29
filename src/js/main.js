@@ -37,7 +37,7 @@
 
     $scope.addAct = function() {
       $http.post('https://mysterious-hollows-8407.herokuapp.com:443/api/activities/', $scope.act)
-      .then(function(){
+      .then(function($form){
         console.log("submit?");
       });
     };

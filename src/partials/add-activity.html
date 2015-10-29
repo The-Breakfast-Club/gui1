@@ -11,7 +11,7 @@
       <button class="edit-activity">edit</button>
     </footer>
   </section>
-  <form class="add-activity panel" id="act" ng-controller="NewActivity" ng-submit="addAct()">
+  <form class="add-activity panel active" id="act" ng-controller='NewActivity' ng-submit='addAct($form)'>
     <h2>add new activity</h2>
     <fieldset class="activity-title">
       <label for="activity-title">activity:</label>
@@ -28,7 +28,7 @@
       <input type="date" id="activity-date" ng-model="act.date">
     </fieldset>
     <footer>
-      <button type="submit"><a href="#/activity">add activity</button>
+      <button type="submit">add activity</button>
     </footer>
   </form>
 </section>

@@ -19,8 +19,8 @@
       .when('/edit-activity', {
         templateUrl: 'partials/edit-activity.html'
       })
-      .when('/chart', {
-        templateUrl: 'partials/chart.html' // TODO: activity title links to chart.html
+      .when('/activity/:id', {
+        templateUrl: 'partials/chart.html'
       });
   })
 
@@ -37,7 +37,7 @@
 
     $scope.addAct = function() {
       $http.post('https://mysterious-hollows-8407.herokuapp.com:443/api/activities/', $scope.act)
-      .then(function(){
+      .then(function($form){
         console.log("submit?");
       });
     };

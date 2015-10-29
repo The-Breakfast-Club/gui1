@@ -4,14 +4,14 @@
     <a href="#/add-activity" class="add-activity-tab"><i class="fa fa-plus fa-fw fa-2x"></i></a>
   </nav>
   <section class="user-activity panel active" ng-repeat="activity in activities">
-    <h2>{{activity.title}}</h2>
+    <h2><a href="#/activity/{{activity.id}}">{{activity.title}}</a></h2>
     <p class="activity-data">{{activity.number_of}} {{activity.units}} on {{activity.date}}</p>
     <footer>
       <button class="add-to">+</button>
       <button class="edit-activity">edit</button>
     </footer>
   </section>
-  <form class="add-activity panel" id="act" ng-controller="" ng-submit="addAct()">
+  <!-- <form class="add-activity panel" id="act" ng-controller="" ng-submit="addAct()">
     <h2>add new activity</h2>
     <fieldset class="activity-title">
       <label for="activity-title">activity:</label>
@@ -30,5 +30,5 @@
     <footer>
       <button type="submit"><a href="#/activity">add activity</button>
     </footer>
-  </form>
+  </form> -->
 </section>

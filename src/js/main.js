@@ -31,7 +31,27 @@
         $rootScope.activities = response.data;
       });
   }) // END activity placeholders
+  //START
+  .run(function($http, $rootScope){
+   $http.get('https://mysterious-hollows-8407.herokuapp.com:443/api/users/');
+ })
+ .controller('signupController', function($scope, $http){
+   $scope.signinvalues= {
+    name: "",
+    email: "",
+    password: "",
+    confirmpassword: ""
+   };
 
+   $scope.submit= function(){
+     console.log("please God please work");
+     $http.post('https://mysterious-hollows-8407.herokuapp.com:443/api/users/', $scope.signinvalues)
+     .then(function (){
+
+     });
+   };
+ })
+  //END
   .controller("NewActivity", function($scope, $http){
     $scope.act = { };
 
@@ -49,16 +69,16 @@
 
 
 // ACTIVITY/ADD-ACTIVITY TABS
-$('.activity-tabs > a').on('click', function(){
-  var panelId = $(this).attr('href');
-
-  $(this).add(panelId)
-    .addClass('active')
-  .siblings()
-    .removeClass('active');
-
-  }).filter('[href="#activity"]')
-    .trigger('click');
+// $('.activity-tabs > a').on('click', function(){
+//   var panelId = $(this).attr('href');
+//
+//   $(this).add(panelId)
+//     .addClass('active')
+//   .siblings()
+//     .removeClass('active');
+//
+//   }).filter('[href="#activity"]')
+//     .trigger('click');
 
 // jquery for tabs
 $('#login').click(function() {

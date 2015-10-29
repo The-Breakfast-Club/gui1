@@ -29,6 +29,11 @@ section.activities {
     padding-right: 10px;
     padding-bottom: 20px;
 
+    h2 > a {
+      text-decoration: none;
+      color: inherit;
+    }
+
     footer > button {
       padding-left: 10px;
       padding-right: 10px;
@@ -55,7 +60,7 @@ section.activities {
       height: 30px;
       width: 95%;
     }
-    footer > button > a {
+    footer > button {
       text-decoration: none;
       color: #FFF;
     }

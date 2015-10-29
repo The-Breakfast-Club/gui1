@@ -33,7 +33,7 @@
   }) // END activity placeholders
   //START
   .run(function($http, $rootScope){
-   $http.get('https://aqueous-sea-6980.herokuapp.com/api/users/');
+   $http.get('https://mysterious-hollows-8407.herokuapp.com:443/api/users/');
  })
  .controller('signupController', function($scope, $http){
    $scope.signinvalues= {
@@ -45,7 +45,7 @@
 
    $scope.submit= function(){
      console.log("please God please work");
-     $http.post('https://aqueous-sea-6980.herokuapp.com/api/users/', $scope.signinvalues)
+     $http.post('https://mysterious-hollows-8407.herokuapp.com:443/api/users/', $scope.signinvalues)
      .then(function (){
 
      });
